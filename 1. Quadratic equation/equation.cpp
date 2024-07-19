@@ -5,7 +5,7 @@ float get_delta(const float& a, const float& b, const float& c);
 void root_finder(const float& a, const float& b, const float& c);
 
 int main() {
-    std::cout << "Please enter a, b, and c consecutively -> ax^2 + bx + c = 0 (a b c): " << std::endl;
+    std::cout << "Please enter a, b, and c consecutively -> ax^2 + bx + c (a b c): " << std::endl;
     float a, b, c;
     std::cin >> a >> b >> c;
     root_finder(a, b, c);
@@ -27,6 +27,8 @@ void root_finder(const float& a, const float& b, const float& c) {
         float del_prime = -del;
         float imaginary = std::sqrt(del_prime) / (2 * a);
         float real = -b / (2.0 * a);
+        //std::string r1 = std::to_string(real) + " + " + std::to_string(imaginary) + "i";
+        //std::string r2 = std::to_string(real) + " - " + std::to_string(imaginary) + "i";
         std::cout << "r1 = " << real << " + " << imaginary << "i" << std::endl;
         std::cout << "r2 = " << real << " - " << imaginary << "i" << std::endl;
     }
