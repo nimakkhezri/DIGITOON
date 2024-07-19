@@ -1,0 +1,40 @@
+CREATE TABLE "parents" (
+	"id"	INTEGER,
+	"name"	TEXT,
+	"has_children"	BOOLEAN DEFAULT FALSE,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+CREATE TABLE "children" (
+	"id"	INTEGER,
+	"name"	TEXT,
+	"parent_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("parent_id") REFERENCES "parents"("id")
+);
+
+-- Adding some records: 
+
+INSERT INTO parents (name)
+VALUES
+	('AmirAli Mahdavi'),
+	('Nima Koohkhezri'),
+	('Hesam Shams'),
+	('Nahid Eftekhari'),
+	('Mahan Afshar');
+	
+INSERT INTO children (name, parent_id)
+VALUES
+	('Helen Afshar', 5),
+	('Navid Mohammadi', 3),
+	('Fatemeh Mahdavi', 1);
+
+
+-- After adding some records, UPDATE has_children:
+
+UPDATE parents
+SET has_children = TRUE
+WHERE EXISTS (
+	SELECT * FROM children
+	WHERE children.parent_id = parents.id
+);
