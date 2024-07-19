@@ -1,23 +1,23 @@
-#ifndef MATRIS_H
-#define MATRIS_H
+#ifndef MATRIX_H
+#define MATRIX_H
 
 #include <iostream>
 #include <vector>
 
-class Matris {
+class Matrix {
 private:
     int row, column;
-    int** matris;
+    int** matrix;
     void set_zero(const int& z_row, const int& z_column) {
         for (int i = 0; i < column; i++)
-            matris[z_row][i] = 0;
+            matrix[z_row][i] = 0;
         for (int i = 0; i < row; i++) 
-            matris[i][z_column] = 0;
+            matrix[i][z_column] = 0;
     }
 public:
-    Matris(const int& row, const int& column);
+    Matrix(const int& row, const int& column);
 
-    void set_matris();
+    void set_matrix();
     void show();
     void zeroing();
 };

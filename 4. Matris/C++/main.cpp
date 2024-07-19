@@ -1,12 +1,12 @@
 #include <iostream>
-#include "Matris.h"
+#include "Matrix.h"
 
 int main() {
     std::cout << "Please enter the row and column of the matrix (m n): ";
     int row, column;
     std::cin >> row >> column;
-    Matris m(row, column);
-    m.set_matris();
+    Matrix m(row, column);
+    m.set_matrix();
     m.zeroing();
     m.show();
     system("Pause");

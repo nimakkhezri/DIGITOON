@@ -1,37 +1,37 @@
-#include "Matris.h"
+#include "Matrix.h"
 
-Matris::Matris(const int& row, const int& column) {
+Matrix::Matrix(const int& row, const int& column) {
     this->row = row;
     this->column = column;
-    matris = new int*[row];
+    matrix = new int*[row];
     for (int i = 0; i < row; i++)
-        matris[i] = new int[column];
+        matrix[i] = new int[column];
 }
 
-void Matris::set_matris() {
+void Matrix::set_matrix() {
     std::cout << "Please enter the fields of the matrix according to the following pattern:\n\n1 2 3\n4 5 6\n7 8 9\n" << std::endl;
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            std::cin >> matris[i][j];
+            std::cin >> matrix[i][j];
     std::cout << "\nDone!" << std::endl;
 }
 
-void Matris::show() {
+void Matrix::show() {
     std::cout << std::endl;
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++) {
-            std::cout << matris[i][j] << " ";
+            std::cout << matrix[i][j] << " ";
         }
         std::cout << std::endl;
     }
 }
 
-void Matris::zeroing() {
+void Matrix::zeroing() {
     std::vector<int> rows;
     std::vector<int> columns;
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++) {
-            if (matris[i][j] == 0) {
+            if (matrix[i][j] == 0) {
                 rows.push_back(i);
                 columns.push_back(j);
             }
