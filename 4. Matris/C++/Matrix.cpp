@@ -8,6 +8,13 @@ Matrix::Matrix(const int& row, const int& column) {
         matrix[i] = new int[column];
 }
 
+Matrix::~Matrix() {
+    for (int i = 0; i < row; i++)
+        delete[] matrix[i];
+    
+    delete[] matrix;
+}
+
 void Matrix::set_matrix() {
     std::cout << "Please enter the fields of the matrix according to the following pattern:\n\n1 2 3\n4 5 6\n7 8 9\n" << std::endl;
     for (int i = 0; i < row; i++)

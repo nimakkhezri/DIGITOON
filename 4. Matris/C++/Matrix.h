@@ -16,6 +16,7 @@ private:
     }
 public:
     Matrix(const int& row, const int& column);
+    ~Matrix();
 
     void set_matrix();
     void show();
