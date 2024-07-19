@@ -10,8 +10,8 @@ class Matrix:
         while i < self.__row :
             input_str = input()
             j = 0
+            row = []
             while j < self.__column :
-                row = []
                 for entry in input_str :
                     if entry.isalnum() :
                         row.append(int(entry))
