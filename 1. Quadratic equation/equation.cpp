@@ -5,7 +5,7 @@ float get_delta(const float& a, const float& b, const float& c);
 void root_finder(const float& a, const float& b, const float& c);
 
 int main() {
-    std::cout << "Please enter a, b, and c consecutively -> ax^2 + bx + c (a b c): " << std::endl;
+    std::cout << "Please enter a, b, and c consecutively -> ax^2 + bx + c = 0 (a b c): " << std::endl;
     float a, b, c;
     std::cin >> a >> b >> c;
     root_finder(a, b, c);
